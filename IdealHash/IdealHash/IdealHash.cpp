@@ -1,20 +1,71 @@
-﻿// IdealHash.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
+﻿#include <iostream>
+#include <vector>
+#include <cstdlib> 
 #include <iostream>
+using namespace std;
+
+vector<vector<double>> Table;
+
+//type - double
+
+double mod(double a, double b)
+{
+    return (((a / b) - floor(a / b)) * b);
+}
+
+double HashFunc(double element, double a, double b, double p, double m)
+{
+    return mod(mod((a * element + b), p), m);
+}
+
+void createNewTable(std::vector<double> vectorElements)
+{
+    
+}
+
+void test()
+{
+    srand((unsigned)time(NULL));
+
+    vector<vector<double>> Table;
+    vector<double> Hashes;
+    vector<double> Elements;
+    int numberOfElements;
+    double temp;
+    double a = rand() % 100;
+    double b = rand() % 100;
+    double p = rand() % 100;
+    double m = rand() % 100;
+    /*
+    cout << "Enter the number of elements:\n";
+    cin >> number;
+    */
+
+    numberOfElements = rand() % 100;
+
+    for (int i = 0; i < numberOfElements; i++)
+    {
+        /*
+        cout << "Enter "<<i<<" element:\n";
+        cin >> temp;
+        Elements.push_back(temp);
+        */
+
+        Elements.push_back(rand() % 100);
+        cout << Elements[i] << " ";
+    }
+    for (int i = 0; i < numberOfElements; i++)
+    {
+        Hashes.push_back(HashFunc(Elements[i], a, b, p, m));
+    }
+    cout << "\n\n\n";
+    for (int i = 0; i < numberOfElements; i++)
+    {
+        cout << Hashes[i] << " ";
+    }
+}
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    test();
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file

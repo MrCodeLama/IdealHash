@@ -1,0 +1,3 @@
+﻿  IdealHash.cpp
+C:\Users\lenov\OneDrive\Документи\GitHub\IdealHash\IdealHash\IdealHash\IdealHash.cpp(34,12): warning C4101: 'temp': unreferenced local variable
+  IdealHash.vcxproj -> C:\Users\lenov\OneDrive\Документи\GitHub\IdealHash\IdealHash\x64\Debug\IdealHash.exe
